@@ -61,9 +61,6 @@
     </footer>
 
     <script>
-        /** * DATA REGISTRY 
-         * כאן מעודכנים הנתיבים לתיקיית pic וסיומות הקבצים ל-png
-         */
         const CONFIG = {
             mainFolder: "https://drive.google.com/drive/folders/1X5w3ebhiQLwLHKJpPHtLHVGQKzZfVKQi?usp=sharing",
             presentations: [
@@ -71,57 +68,49 @@
                     id: "01",
                     title: "תאורה",
                     link: "https://docs.google.com/presentation/d/1yn543iDb3OdNy_Eff7bCFUL766mjkr80vOrYVRk7pf8/edit?usp=drive_link",
-                    image: "pic/תאורה.png",
-                    fallback: "pic/תאורה.png"
+                    image: "pic/תאורה.png"
                 },
                 {
                     id: "02",
                     title: "הלוקיישן",
                     link: "https://docs.google.com/presentation/d/1_UE995cHWVq2TtBN0lUSSpDwSm3OGD3E34kdNGbcfDA/edit?usp=drive_link",
-                    image: "pic/סט קולנועי.png",
-                    fallback: "https://images.unsplash.com/photo-1600456899121-68d5d3f34936?q=80&w=800"
+                    image: "pic/סט קולנועי.png"
                 },
                 {
                     id: "03",
                     title: "מבנה הסיפור הדרמתי",
                     link: "https://docs.google.com/presentation/d/1ofzQPo7Yoi1g059ykmPP8AdLkIRDepcSbCxhjCrzcaY/edit?usp=drive_link",
-                    image: "pic/סיפור דרמתי.png",
-                    fallback: "https://images.unsplash.com/photo-1615267440684-e27f1674311b?q=80&w=800"
+                    image: "pic/סיפור דרמתי.png"
                 },
                 {
                     id: "04",
                     title: "מיזנסצנה",
                     link: "https://docs.google.com/presentation/d/1p-Eg2hZKa9VBusKE6d1HDYoIdDxLWlvVnEm66ArVhgI/edit?usp=drive_link",
-                    image: "pic/מיזנסצנה.png",
-                    fallback: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800"
+                    image: "pic/מיזנסצנה.png"
                 },
                 {
                     id: "05",
                     title: "עריכה",
                     link: "https://docs.google.com/presentation/d/10oyYXHqkYFZnJ7UrCJmsqvoQeVNVigKnVlyFSUmxViw/edit?usp=drive_link",
-                    image: "pic/עריכה.png",
-                    fallback: "https://images.unsplash.com/photo-1638934578323-9c7781230813?q=80&w=800"
+                    image: "pic/עריכה.png"
                 },
                 {
                     id: "06",
                     title: "פסקול",
                     link: "https://docs.google.com/presentation/d/1AMYhG2YgIvINd3kOF8gEE_KOB0lMLS_pom2UdN8XuC8/edit?usp=drive_link",
-                    image: "pic/פסקול.png",
-                    fallback: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800"
+                    image: "pic/פסקול.png"
                 },
                 {
                     id: "07",
                     title: "רגש בקולנוע",
                     link: "https://docs.google.com/presentation/d/1YYpy4d29_-zYqKtt3rkjfBKbDTJZqp5Sm3ZSIaI10xU/edit?usp=drive_link",
-                    image: "pic/רגש.png",
-                    fallback: "https://images.unsplash.com/photo-1504196606672-aef5c9ce792f?q=80&w=800"
+                    image: "pic/רגש.png"
                 },
                 {
                     id: "08",
                     title: "שוטינג",
                     link: "https://docs.google.com/presentation/d/1RB2vA5G2f97Zp_fIYCd5ZilrXjMjJZ5fr4WDigOafVg/edit?usp=drive_link",
-                    image: "pic/שוטינג.png",
-                    fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800"
+                    image: "pic/שוטינג.png"
                 }
             ]
         };
@@ -140,8 +129,7 @@
                         <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">${item.title}</h3>
                     </div>
                     <a href="${item.link}" target="_blank" class="card-container relative block aspect-video rounded-2xl overflow-hidden bg-slate-900">
-                        <img src="${item.image}" alt="${item.title}" class="card-image w-full h-full object-cover" 
-                             onerror="this.src='${item.fallback}'">
+                        <img src="${item.image}" alt="${item.title}" class="card-image w-full h-full object-cover">
                         <div class="glass-overlay absolute inset-0 flex items-end p-6">
                             <span class="text-white font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
                                 פתיחת מצגת
