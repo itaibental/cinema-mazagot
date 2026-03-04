@@ -30,9 +30,6 @@
         .glass-overlay {
             background: linear-gradient(0deg, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0) 50%);
         }
-        .btn-glow {
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-        }
     </style>
 </head>
 <body class="p-6 md:p-16">
@@ -43,26 +40,17 @@
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">מצגות ומערכי שיעור</h1>
         <h2 class="text-2xl md:text-4xl text-sky-400 font-light tracking-wide">הפקות בקולנוע</h2>
-        
-        <div class="mt-12 flex justify-center gap-4">
-            <a id="main-drive-link" href="#" target="_blank" class="btn-glow inline-flex items-center px-8 py-4 bg-sky-500 text-slate-950 font-black rounded-xl hover:bg-white transition-all duration-300">
-                <svg class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
-                לתיקייה המלאה ב-Drive
-            </a>
-        </div>
     </header>
 
     <main id="presentation-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
         </main>
 
     <footer class="max-w-6xl mx-auto mt-32 py-12 border-t border-slate-800 text-center text-slate-500">
-        <p class="italic">"קולנוע הוא עניין של אור וצל."</p>
-        <p class="mt-4 font-bold">מגמת קולנוע 2024</p>
+        <p class="font-bold">מגמת קולנוע 2024</p>
     </footer>
 
     <script>
         const CONFIG = {
-            mainFolder: "https://drive.google.com/drive/folders/1X5w3ebhiQLwLHKJpPHtLHVGQKzZfVKQi?usp=sharing",
             presentations: [
                 {
                     id: "01",
@@ -117,8 +105,6 @@
 
         function initApp() {
             const grid = document.getElementById('presentation-grid');
-            const mainLink = document.getElementById('main-drive-link');
-            if(mainLink) mainLink.href = CONFIG.mainFolder;
 
             CONFIG.presentations.forEach((item, index) => {
                 const card = document.createElement('div');
