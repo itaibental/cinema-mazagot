@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מצגות ומערכי שיעור - הפקות בקולנוע</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        .card-container {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #1e293b;
+        }
+        .card-container:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+        .card-image {
+            transition: transform 0.6s ease;
+        }
+        .card-container:hover .card-image {
+            transform: scale(1.1);
+        }
+        .glass-overlay {
+            background: linear-gradient(0deg, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0) 50%);
+        }
+        .btn-glow {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+    </style>
+</head>
+<body class="p-6 md:p-16">
+
+    <!-- Header Section -->
+    <header class="max-w-6xl mx-auto text-center mb-20">
+        <div class="inline-block px-4 py-1 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-sm font-bold mb-6">
+            מרכז למידה דיגיטלי
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">מצגות ומערכי שיעור</h1>
+        <h2 class="text-2xl md:text-4xl text-sky-400 font-light tracking-wide">הפקות בקולנוע</h2>
+        
+        <div class="mt-12 flex justify-center gap-4">
+            <a id="main-drive-link" href="#" target="_blank" class="btn-glow inline-flex items-center px-8 py-4 bg-sky-500 text-slate-950 font-black rounded-xl hover:bg-white transition-all duration-300">
+                <svg class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                לתיקייה המלאה ב-Drive
+            </a>
+        </div>
+    </header>
+
+    <!-- Content Grid -->
+    <main id="presentation-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <!-- המצגות ירונדרו כאן באמצעות JS -->
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-32 py-12 border-t border-slate-800 text-center text-slate-500">
+        <p class="italic">"קולנוע הוא עניין של אור וצל."</p>
+        <p class="mt-4 font-bold">מגמת קולנוע 2024</p>
+    </footer>
+
+    <script>
+        /** * DATA REGISTRY 
+         * כאן מרכזים את כל ההפניות והקבצים. 
+         * לכל סעיף יש כותרת, קישור ותמונה.
+         */
+        const CONFIG = {
+            mainFolder: "https://drive.google.com/drive/folders/1X5w3ebhiQLwLHKJpPHtLHVGQKzZfVKQi?usp=sharing",
+            presentations: [
+                {
+                    id: "01",
+                    title: "תאורה",
+                    link: "https://docs.google.com/presentation/d/1yn543iDb3OdNy_Eff7bCFUL766mjkr80vOrYVRk7pf8/edit?usp=drive_link",
+                    image: "תאורה.jpg",
+                    fallback: "https://images.unsplash.com/photo-1586269832015-33019c425964?q=80&w=800"
+                },
+                {
+                    id: "02",
+                    title: "הלוקיישן",
+                    link: "https://docs.google.com/presentation/d/1_UE995cHWVq2TtBN0lUSSpDwSm3OGD3E34kdNGbcfDA/edit?usp=drive_link",
+                    image: "סט קולנועי.jpg",
+                    fallback: "https://images.unsplash.com/photo-1600456899121-68d5d3f34936?q=80&w=800"
+                },
+                {
+                    id: "03",
+                    title: "מבנה הסיפור הדרמתי",
+                    link: "https://docs.google.com/presentation/d/1ofzQPo7Yoi1g059ykmPP8AdLkIRDepcSbCxhjCrzcaY/edit?usp=drive_link",
+                    image: "סיפור דרמתי.jpg",
+                    fallback: "https://images.unsplash.com/photo-1615267440684-e27f1674311b?q=80&w=800"
+                },
+                {
+                    id: "04",
+                    title: "מיזנסצנה",
+                    link: "https://docs.google.com/presentation/d/1p-Eg2hZKa9VBusKE6d1HDYoIdDxLWlvVnEm66ArVhgI/edit?usp=drive_link",
+                    image: "מיזנסצנה.jpg",
+                    fallback: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800"
+                },
+                {
+                    id: "05",
+                    title: "עריכה",
+                    link: "https://docs.google.com/presentation/d/10oyYXHqkYFZnJ7UrCJmsqvoQeVNVigKnVlyFSUmxViw/edit?usp=drive_link",
+                    image: "עריכה.jpg",
+                    fallback: "https://images.unsplash.com/photo-1638934578323-9c7781230813?q=80&w=800"
+                },
+                {
+                    id: "06",
+                    title: "פסקול",
+                    link: "https://docs.google.com/presentation/d/1AMYhG2YgIvINd3kOF8gEE_KOB0lMLS_pom2UdN8XuC8/edit?usp=drive_link",
+                    image: "פסקול.jpg",
+                    fallback: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800"
+                },
+                {
+                    id: "07",
+                    title: "רגש בקולנוע",
+                    link: "https://docs.google.com/presentation/d/1YYpy4d29_-zYqKtt3rkjfBKbDTJZqp5Sm3ZSIaI10xU/edit?usp=drive_link",
+                    image: "רגש.jpg",
+                    fallback: "https://images.unsplash.com/photo-1504196606672-aef5c9ce792f?q=80&w=800"
+                },
+                {
+                    id: "08",
+                    title: "שוטינג",
+                    link: "https://docs.google.com/presentation/d/1RB2vA5G2f97Zp_fIYCd5ZilrXjMjJZ5fr4WDigOafVg/edit?usp=drive_link",
+                    image: "שוטינג.jpg",
+                    fallback: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800"
+                }
+            ]
+        };
+
+        function initApp() {
+            const grid = document.getElementById('presentation-grid');
+            document.getElementById('main-drive-link').href = CONFIG.mainFolder;
+
+            CONFIG.presentations.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = "group opacity-0 transition-all duration-700 transform translate-y-8";
+                card.innerHTML = `
+                    <div class="flex items-center mb-4 space-x-3 space-x-reverse">
+                        <span class="text-sky-500 font-bold text-lg">${item.id}.</span>
+                        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">${item.title}</h3>
+                    </div>
+                    <a href="${item.link}" target="_blank" class="card-container relative block aspect-video rounded-2xl overflow-hidden bg-slate-900">
+                        <img src="${item.image}" alt="${item.title}" class="card-image w-full h-full object-cover" 
+                             onerror="this.src='${item.fallback}'">
+                        <div class="glass-overlay absolute inset-0 flex items-end p-6">
+                            <span class="text-white font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                פתיחת מצגת
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                `;
+                grid.appendChild(card);
+                
+                // אנימציית כניסה מדורגת
+                setTimeout(() => {
+                    card.classList.remove('opacity-0', 'translate-y-8');
+                }, index * 100 + 100);
+            });
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
